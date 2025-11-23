@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tags · Is Equipped</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <!-- Add favicon here -->
+    <link rel="icon" type="image/png" href="Assets/Logo.png">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Highlight.js (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="main-wrapper">
+    <!-- Sidebar -->
+ <aside class="sidebar no-scrollbar">
+        <div class="sidebar-inner">
+
+            <!-- Logo / title -->
+            <div class="sidebar-logo">
+                <div class="sidebar-logo-icon">
+                    <img src="Assets/Logo.png" alt="Logo">
+                </div>
+                <div class="sidebar-logo-text">
+                    <div class="sidebar-logo-title">Vault Docs</div>
+                    <div class="sidebar-logo-subtitle">Versatile Asset Utility Library Tools</div>
+                </div>
+            </div>
+
+            <!-- Nav -->
+            <div class="sidebar-nav-section" style="margin-top:0.9rem;">
+                <!-- Overview -->
+                <div class="nav-parent-row">
+                    <a href="index.html" class="nav-link-parent">Overview</a>
+                </div>
+
+                <!-- CCTFF group -->
+                <div class="nav-parent-row" data-toggle="cctff-main">
+                    <a href="cctff.html" class="nav-link-parent">CCTFF</a>
+                    <i class="fas fa-chevron-right nav-chevron open"></i>
+                </div>
+                <ul id="cctff-main" class="nav-list nav-children">
+                    <li class="nav-item">
+                        <a href="cctff.html" class="nav-child-link">Overview</a>
+                    </li>
+
+                    <!-- Tags group (this page) -->
+                    <li class="nav-item">
+                        <div class="nav-parent-row" data-toggle="tags-sub">
+                            <a href="tags.html" class="nav-link-parent active">Tags</a>
+                            <i class="fas fa-chevron-right nav-chevron open"></i>
+                        </div>
+                        <ul id="tags-sub" class="nav-children">
+
+                            <!-- Api Index -->
+                            <li class="nav-item">
+                                <a href="tags.html" class="nav-child-link">API index</a>
+                            </li>
+
+                            <!-- Give -->
+                            <li class="nav-item">
+                                <a href="tags-give.html" class="nav-child-link">TagAPI:Give</a>
+                            </li>
+
+                            <!-- Remove -->
+                            <li class="nav-item">
+                                <a href="tags-remove.html" class="nav-child-link">TagAPI:Remove</a>
+                            </li>
+
+                            <!-- Equip -->
+                            <li class="nav-item">
+                                <a href="tags-equip.html" class="nav-child-link">TagApi:Epuip</a>
+                            </li>
+                            
+                            <!-- Unequip -->
+                            <li class="nav-item">
+                                <a href="tags-unequip.html" class="nav-child-link">TagAPI:Unequip</a>
+                            </li>
+
+                            <!-- Get Owned -->
+                            <li class="nav-item">
+                                <a href="tags-getowned.html" class="nav-child-link">TagAPI:GetOwned</a>
+                            </li>
+
+                            <!-- Get Equipped -->
+                            <li class="nav-item">
+                                <a href="tags-equipped.html" class="nav-child-link">TagAPI:GetEquipped</a>
+                            </li>
+
+                            <!-- Has Tag -->
+                            <li class="nav-item">
+                                <a href="tags-hastag.html" class="nav-child-link">TagAPI:HasTag</a>
+                            </li>
+
+                            <!-- Is Equipped -->
+                            <li class="nav-item">
+                                <a href="tags-isequipped.html" class="nav-child-link active">TagAPI:IsEquipped</a>
+                            </li>
+
+                            <!-- Clear All -->
+                            <li class="nav-item">
+                                <a href="tags-clearall.html" class="nav-child-link">TagAPI:ClearAll</a>
+                            </li>
+                            
+                            <!-- Unequip All -->
+                            <li class="nav-item">
+                                <a href="tags-unequipall.html" class="nav-child-link">TagAPI:UnequipAll</a>
+                            </li>
+
+                            <!-- Get Max Slots -->
+                            <li class="nav-item">
+                                <a href="tags-getmaxslots.html" class="nav-child-link">TagAPI:GetMaxSlots</a>
+                            </li>
+
+                            <!-- Get Available Slots -->
+                            <li class="nav-item">
+                                <a href="tags-getavailableslots.html" class="nav-child-link">TagAPI:GetAvailableSlots</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <!-- Leaderboard Tags -->
+                    <li class="nav-item">
+                        <div class="nav-parent-row" data-toggle="leaderboard-sub">
+                            <a href="leaderboard.html" class="nav-link-parent">Leaderboard Tags</a>
+                            <i class="fas fa-chevron-right nav-chevron"></i>
+                        </div>
+                        <ul id="leaderboard-sub" class="nav-children hidden">
+                            
+                            <!-- Api Index -->
+                            <li class="nav-item">
+                                <a href="leaderboard.html" class="nav-child-link">API index</a>
+                            </li>
+
+                            <!-- Give Leaderboard Tag -->
+                            <li class="nav-item">
+                                <a href="leaderboard-givetag.html" class="nav-child-link">TagAPI:GiveLeaderboardTag</a>
+                            </li>
+
+                            <!-- Update Leaderboard Tag -->
+                            <li class="nav-item">
+                                <a href="leaderboard-updatetag.html" class="nav-child-link">TagAPI:UpdateLeaderboardTag</a>
+                            </li>
+
+                            <!-- Remove Leaderboard Tag -->
+                            <li class="nav-item">
+                                <a href="leaderboard-removetag.html" class="nav-child-link">TagAPI:RemoveLeaderboardTag</a>
+                            </li>
+
+                            <!-- Get Leaderbaord Tag -->
+                            <li class="nav-item">
+                                <a href="leaderboard-gettag.html" class="nav-child-link">TagAPI:GetLeaderboardTagText</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- System Messages -->
+                    <li class="nav-item">
+                        <div class="nav-parent-row" data-toggle="system-sub">
+                            <a href="system.html" class="nav-link-parent">System Messages</a>
+                            <i class="fas fa-chevron-right nav-chevron"></i>
+                        </div>
+                        <ul id="system-sub" class="nav-children hidden">
+
+                            <!-- Api Index -->
+                            <li class="nav-item">
+                                <a href="system.html" class="nav-child-link">API index</a>
+                            </li>
+
+                            <!-- Send System Message -->
+                            <li class="nav-item">
+                                <a href="system-sendmessage.html" class="nav-child-link">TagAPI:SendSystemMessage</a>
+                            </li>
+
+                            <!-- Update Client Settings -->
+                            <li class="nav-item">
+                                <a href="system-updatesettings.html" class="nav-child-link">TagAPI:UpdateClientSettings</a>
+                            </li>
+
+                            <!-- Is System Message Enabled -->
+                            <li class="nav-item">
+                                <a href="system-messageenabled.html" class="nav-child-link">TagAPI:IsSystemMessageEnabled</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+<main class="content-wrapper">
+    <div class="content-inner">
+        <h1>TagAPI:IsEquipped</h1>
+        <p>The <code>TagAPI:IsEquipped</code> method checks whether a specific tag is currently equipped by a player. This differs from <code>HasTag</code> by verifying active equipment status rather than just ownership. Works in both server and client contexts.</p>
+
+      <h2>Overview</h2>
+        <div class="overview-grid">
+            <div class="overview-item">
+                <div class="overview-label">Execution Context</div>
+                <div class="overview-value"><code>Server</code>, <code>Client</code></div>
+            </div>
+            <div class="overview-item">
+                <div class="overview-label">Script Type</div>
+                <div class="overview-value">Server Script, Local Script</div>
+            </div>
+            <div class="overview-item">
+                <div class="overview-label">Returns</div>
+                <div class="overview-value"><code>boolean</code></div>
+            </div>
+            <div class="overview-item">
+                <div class="overview-label">Side Effects</div>
+                <div class="overview-value">None - read-only operation</div>
+            </div>
+        </div>
+
+        <h2>Syntax</h2>
+        <p><code>local isEquipped = TagAPI:IsEquipped(player: Player, tagId: string)</code></p>
+
+        <table class="param-table">
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>player</code></td>
+                    <td><code>Player</code></td>
+                    <td>The player instance to check</td>
+                </tr>
+                <tr>
+                    <td><code>tagId</code></td>
+                    <td><code>string</code></td>
+                    <td>The tag identifier to check if equipped</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Return Values</h2>
+        <table class="param-table">
+            <thead>
+                <tr>
+                    <th>Return</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>isEquipped</code></td>
+                    <td><code>boolean</code></td>
+                    <td>True if the player has the tag equipped, false otherwise</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Basic Usage</h2>
+        <p>Check if a specific tag is equipped.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local CCTFF = require(ReplicatedStorage:WaitForChild("CCTFF"))
+local TagAPI = CCTFF.TagAPI
+
+if TagAPI:IsEquipped(player, "VIP") then
+    print(player.Name .. " is showing their VIP tag")
+else
+    print("VIP tag not equipped")
+end</code></pre>
+        </div>
+
+        <h2>Active Bonus Check</h2>
+        <p>Apply bonuses only when tag is actively equipped.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function applyVIPBonus(player, rewardAmount)
+    local bonus = rewardAmount
+    
+    -- Only apply bonus if VIP is equipped
+    if TagAPI:IsEquipped(player, "VIP") then
+        bonus = bonus * 2
+        print("VIP bonus applied!")
+    end
+    
+    player.leaderstats.Coins.Value += bonus
+    return bonus
+end
+
+-- Award coins with potential VIP bonus
+local coinsAwarded = applyVIPBonus(player, 100)
+print("Awarded " .. coinsAwarded .. " coins")</code></pre>
+        </div>
+
+        <h2>Toggle Equipment</h2>
+        <p>Toggle a tag's equipped state.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function toggleTag(player, tagId)
+    if not TagAPI:HasTag(player, tagId) then
+        return false, "You don't own this tag"
+    end
+    
+    if TagAPI:IsEquipped(player, tagId) then
+        TagAPI:Unequip(player, tagId)
+        return true, "Tag unequipped"
+    else
+        local success, message = TagAPI:Equip(player, tagId)
+        return success, message
+    end
+end
+
+local success, message = toggleTag(player, "Premium")
+print(message)</code></pre>
+        </div>
+
+        <h2>UI Button State</h2>
+        <p>Update UI button based on equipment status.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>-- LocalScript
+local player = game.Players.LocalPlayer
+local TagAPI = CCTFF.TagAPI
+local tagButton = script.Parent
+
+local function updateButtonState(tagId)
+    if not TagAPI:HasTag(player, tagId) then
+        tagButton.Text = "🔒 Locked"
+        tagButton.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+    elseif TagAPI:IsEquipped(player, tagId) then
+        tagButton.Text = "✓ Equipped"
+        tagButton.BackgroundColor3 = Color3.fromRGB(34, 197, 94)
+    else
+        tagButton.Text = "Equip"
+        tagButton.BackgroundColor3 = Color3.fromRGB(59, 130, 246)
+    end
+end
+
+-- Update on click
+tagButton.MouseButton1Click:Connect(function()
+    toggleRemote:FireServer("VIP")
+    wait(0.1)
+    updateButtonState("VIP")
+end)
+
+updateButtonState("VIP")</code></pre>
+        </div>
+
+        <h2>Active Privileges</h2>
+        <p>Grant access only when admin tag is equipped.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function hasActiveAdminPrivileges(player)
+    local adminTags = {"Owner", "Admin", "Moderator"}
+    
+    for _, tagId in ipairs(adminTags) do
+        if TagAPI:IsEquipped(player, tagId) then
+            return true, tagId
+        end
+    end
+    
+    return false, nil
+end
+
+-- Command handler
+local function executeAdminCommand(player, command)
+    local hasPrivileges, adminTag = hasActiveAdminPrivileges(player)
+    
+    if not hasPrivileges then
+        return false, "Equip an admin tag to use commands"
+    end
+    
+    print(player.Name .. " using " .. adminTag .. " executed: " .. command)
+    return true, "Command executed"
+end</code></pre>
+        </div>
+
+        <h2>Chat Badge Display</h2>
+        <p>Verify which tags should appear in chat.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function getChatBadges(player)
+    local badges = {}
+    local possibleTags = {"Owner", "Admin", "Moderator", "VIP", "Premium"}
+    
+    for _, tagId in ipairs(possibleTags) do
+        if TagAPI:IsEquipped(player, tagId) then
+            table.insert(badges, tagId)
+        end
+    end
+    
+    return badges
+end
+
+-- Custom chat integration
+game.Players.PlayerAdded:Connect(function(player)
+    player.Chatted:Connect(function(message)
+        local badges = getChatBadges(player)
+        local badgeText = ""
+        
+        for _, badge in ipairs(badges) do
+            badgeText = badgeText .. "[" .. badge .. "] "
+        end
+        
+        print(badgeText .. player.Name .. ": " .. message)
+    end)
+end)</code></pre>
+        </div>
+
+        <h2>Prevent Duplicate Equip</h2>
+        <p>Check before attempting to equip.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function safeEquip(player, tagId)
+    -- Check ownership first
+    if not TagAPI:HasTag(player, tagId) then
+        return false, "You don't own this tag"
+    end
+    
+    -- Check if already equipped
+    if TagAPI:IsEquipped(player, tagId) then
+        return false, "Tag is already equipped"
+    end
+    
+    -- Attempt to equip
+    return TagAPI:Equip(player, tagId)
+end
+
+local success, message = safeEquip(player, "VIP")
+print(message)</code></pre>
+        </div>
+
+        <h2>Active Event Badge</h2>
+        <p>Check if player is participating in an event via equipped tag.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function isParticipatingInEvent(player, eventTag)
+    -- Must both own AND equip the event tag to participate
+    if not TagAPI:HasTag(player, eventTag) then
+        return false, "Don't have event tag"
+    end
+    
+    if not TagAPI:IsEquipped(player, eventTag) then
+        return false, "Event tag not equipped"
+    end
+    
+    return true, "Active participant"
+end
+
+-- Check when player tries to join event area
+local participating, reason = isParticipatingInEvent(player, "SummerEvent2025")
+if participating then
+    player:LoadCharacter() -- Teleport to event
+else
+    print("Cannot join: " .. reason)
+end</code></pre>
+        </div>
+
+        <h2>Equipped Tag Counter</h2>
+        <p>Count how many tags from a list are equipped.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function countEquippedFromList(player, tagList)
+    local count = 0
+    local equipped = {}
+    
+    for _, tagId in ipairs(tagList) do
+        if TagAPI:IsEquipped(player, tagId) then
+            count += 1
+            table.insert(equipped, tagId)
+        end
+    end
+    
+    return count, equipped
+end
+
+local premiumTags = {"VIP", "Premium", "Supporter"}
+local count, equipped = countEquippedFromList(player, premiumTags)
+
+print(player.Name .. " has " .. count .. " premium tags equipped")
+print("Equipped: " .. table.concat(equipped, ", "))</code></pre>
+        </div>
+
+        <h2>Conditional Particle Effects</h2>
+        <p>Apply visual effects based on equipped tags.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function applyTagEffects(player)
+    local character = player.Character
+    if not character then return end
+    
+    local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+    if not humanoidRootPart then return end
+    
+    -- Remove existing effects
+    for _, effect in ipairs(humanoidRootPart:GetChildren()) do
+        if effect:IsA("ParticleEmitter") then
+            effect:Destroy()
+        end
+    end
+    
+    -- Add effects for equipped tags
+    if TagAPI:IsEquipped(player, "Legendary") then
+        local sparkles = Instance.new("Sparkles")
+        sparkles.Parent = humanoidRootPart
+    end
+    
+    if TagAPI:IsEquipped(player, "VIP") then
+        local glow = Instance.new("PointLight")
+        glow.Color = Color3.fromRGB(255, 215, 0)
+        glow.Brightness = 2
+        glow.Range = 10
+        glow.Parent = humanoidRootPart
+    end
+end
+
+game.Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function()
+        applyTagEffects(player)
+    end)
+end)
+
+-- Update when tags change
+TagAPI.OnTagEquipped:Connect(applyTagEffects)
+TagAPI.OnTagUnequipped:Connect(applyTagEffects)</code></pre>
+        </div>
+
+        <h2>Team Auto-Assignment</h2>
+        <p>Assign teams based on equipped tags.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function assignTeamByTag(player)
+    if TagAPI:IsEquipped(player, "Owner") or TagAPI:IsEquipped(player, "Admin") then
+        player.Team = game.Teams.Staff
+    elseif TagAPI:IsEquipped(player, "VIP") or TagAPI:IsEquipped(player, "Premium") then
+        player.Team = game.Teams.VIP
+    else
+        player.Team = game.Teams.Players
+    end
+end
+
+game.Players.PlayerAdded:Connect(assignTeamByTag)
+
+-- Update team when tags are equipped/unequipped
+TagAPI.OnTagEquipped:Connect(assignTeamByTag)
+TagAPI.OnTagUnequipped:Connect(assignTeamByTag)</code></pre>
+        </div>
+
+        <h2>Rank Display</h2>
+        <p>Show highest priority equipped tag as rank.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local TAG_PRIORITY = {
+    Owner = 1,
+    Admin = 2,
+    Moderator = 3,
+    VIP = 4,
+    Premium = 5,
+    Member = 6
+}
+
+local function getHighestEquippedRank(player)
+    local highestPriority = math.huge
+    local highestTag = "None"
+    
+    for tagId, priority in pairs(TAG_PRIORITY) do
+        if TagAPI:IsEquipped(player, tagId) and priority < highestPriority then
+            highestPriority = priority
+            highestTag = tagId
+        end
+    end
+    
+    return highestTag
+end
+
+-- Display rank in leaderstats
+game.Players.PlayerAdded:Connect(function(player)
+    local leaderstats = Instance.new("Folder")
+    leaderstats.Name = "leaderstats"
+    leaderstats.Parent = player
+    
+    local rank = Instance.new("StringValue")
+    rank.Name = "Rank"
+    rank.Value = getHighestEquippedRank(player)
+    rank.Parent = leaderstats
+    
+    -- Update rank when tags change
+    TagAPI.OnTagEquipped:Connect(function(p)
+        if p == player then
+            rank.Value = getHighestEquippedRank(player)
+        end
+    end)
+end)</code></pre>
+        </div>
+
+        <h2>Cooldown Reduction</h2>
+        <p>Reduce ability cooldowns based on equipped tags.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function getCooldownMultiplier(player)
+    local multiplier = 1.0
+    
+    if TagAPI:IsEquipped(player, "Speedster") then
+        multiplier *= 0.8 -- 20% faster cooldowns
+    end
+    
+    if TagAPI:IsEquipped(player, "Elite") then
+        multiplier *= 0.9 -- 10% faster cooldowns
+    end
+    
+    if TagAPI:IsEquipped(player, "Premium") then
+        multiplier *= 0.95 -- 5% faster cooldowns
+    end
+    
+    return multiplier
+end
+
+local function useAbility(player, baseCooldown)
+    local multiplier = getCooldownMultiplier(player)
+    local actualCooldown = baseCooldown * multiplier
+    
+    print("Ability cooldown: " .. actualCooldown .. "s")
+    -- Apply ability logic here
+    
+    return actualCooldown
+end
+
+useAbility(player, 10) -- 10 second base cooldown</code></pre>
+        </div>
+
+        <h2>Status Icon Display</h2>
+        <p>Show overhead icons for equipped tags.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local TAG_ICONS = {
+    Owner = "👑",
+    Admin = "🛡️",
+    VIP = "⭐",
+    Premium = "💎",
+    Developer = "🔧"
+}
+
+local function updateOverheadIcon(player)
+    local character = player.Character
+    if not character then return end
+    
+    local head = character:FindFirstChild("Head")
+    if not head then return end
+    
+    -- Remove old icon
+    local oldGui = head:FindFirstChild("TagIcon")
+    if oldGui then oldGui:Destroy() end
+    
+    -- Find highest priority equipped tag with icon
+    for tagId, icon in pairs(TAG_ICONS) do
+        if TagAPI:IsEquipped(player, tagId) then
+            local billboard = Instance.new("BillboardGui")
+            billboard.Name = "TagIcon"
+            billboard.Size = UDim2.new(0, 50, 0, 50)
+            billboard.StudsOffset = Vector3.new(0, 3, 0)
+            billboard.Parent = head
+            
+            local label = Instance.new("TextLabel")
+            label.Size = UDim2.new(1, 0, 1, 0)
+            label.Text = icon
+            label.TextScaled = true
+            label.BackgroundTransparency = 1
+            label.Parent = billboard
+            
+            break -- Only show highest priority
+        end
+    end
+end
+
+game.Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function()
+        wait(0.5)
+        updateOverheadIcon(player)
+    end)
+end)
+
+TagAPI.OnTagEquipped:Connect(updateOverheadIcon)
+TagAPI.OnTagUnequipped:Connect(updateOverheadIcon)</code></pre>
+        </div>
+
+        <h2>Achievement Unlock</h2>
+        <p>Unlock achievements for equipping specific tag combinations.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local COMBO_ACHIEVEMENTS = {
+    TripleVIP = {"VIP", "Premium", "Supporter"},
+    AdminTrio = {"Owner", "Admin", "Moderator"},
+    EventCollector = {"SummerEvent", "WinterEvent", "HalloweenEvent"}
+}
+
+local function checkComboAchievements(player)
+    for achievementName, requiredTags in pairs(COMBO_ACHIEVEMENTS) do
+        local hasCombo = true
+        
+        for _, tagId in ipairs(requiredTags) do
+            if not TagAPI:IsEquipped(player, tagId) then
+                hasCombo = false
+                break
+            end
+        end
+        
+        if hasCombo and not TagAPI:HasTag(player, achievementName) then
+            TagAPI:Give(player, achievementName)
+            print(player.Name .. " unlocked: " .. achievementName)
+        end
+    end
+end
+
+TagAPI.OnTagEquipped:Connect(checkComboAchievements)</code></pre>
+        </div>
+
+        <h2>Access Level Calculation</h2>
+        <p>Calculate numeric access level from equipped tags.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local ACCESS_LEVELS = {
+    Owner = 100,
+    Admin = 75,
+    Moderator = 50,
+    VIP = 25,
+    Premium = 10,
+    Member = 1
+}
+
+local function getAccessLevel(player)
+    local maxLevel = 0
+    
+    for tagId, level in pairs(ACCESS_LEVELS) do
+        if TagAPI:IsEquipped(player, tagId) and level > maxLevel then
+            maxLevel = level
+        end
+    end
+    
+    return maxLevel
+end
+
+local function canAccessArea(player, requiredLevel)
+    local playerLevel = getAccessLevel(player)
+    return playerLevel >= requiredLevel
+end
+
+-- Check access to restricted area
+if canAccessArea(player, 50) then
+    print("Access granted")
+else
+    print("Access denied - insufficient permissions")
+end</code></pre>
+        </div>
+    </div>
+</main>
+
+</div>
+
+<script>
+    if (window.hljs) hljs.highlightAll();
+
+    document.querySelectorAll('.nav-parent-row').forEach(row => {
+        const id = row.getAttribute('data-toggle');
+        const target = id ? document.getElementById(id) : null;
+        const chevron = row.querySelector('.nav-chevron');
+
+        row.addEventListener('click', (e) => {
+            if (e.target.tagName.toLowerCase() === 'a') return;
+            if (!target) return;
+
+            const hidden = target.classList.contains('hidden');
+            target.classList.toggle('hidden', !hidden);
+            if (chevron) chevron.classList.toggle('open', hidden);
+        });
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
