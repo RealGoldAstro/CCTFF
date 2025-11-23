@@ -148,10 +148,11 @@ a:hover {
 /* ===== Stats Section ===== */
 .stats-section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(4, 1fr); /* Changed from auto-fit to fixed 4 columns */
     gap: 1rem;
     margin-bottom: 3rem;
 }
+
 
 .stat-item {
     display: flex;
@@ -484,7 +485,7 @@ a:hover {
     }
     
     .stats-section {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
     }
     
     .step-item {
@@ -504,6 +505,7 @@ a:hover {
         justify-content: center;
     }
 }
+
 
 
 /* ===== Overview Info Boxes ===== 
@@ -960,6 +962,7 @@ code {
         padding: 1.8rem 1.4rem 2.5rem;
     }
 }
+
 
 
 
