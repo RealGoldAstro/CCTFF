@@ -146,7 +146,7 @@ body {
 }
 
 .sidebar-logo-subtitle {
-    font-size: 0.75rem;
+    font-size: 0.6rem;
     color: var(--text-soft);
 }
 
@@ -384,5 +384,6 @@ code {
         padding: 1.8rem 1.4rem 2.5rem;
     }
 }
+
 
 
