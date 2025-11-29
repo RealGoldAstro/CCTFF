@@ -1,132 +1,432 @@
+<!-- testing.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CCTFF Small Card</title>
+  <title>CCTFF – Ad Testing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="Assets/Logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
   <style>
     body {
       margin: 0;
-      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background: #020617;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #e5e7eb;
+    }
+    .testing-wrapper {
+      width: 1150px;
+      padding: 32px 40px;
+      border-radius: 28px;
+      background: radial-gradient(circle at top left, #111827 0%, #020617 55%, #020617 100%);
+      border: 1px solid #111827;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+      box-sizing: border-box;
+    }
+    .testing-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+    .testing-title {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+    }
+    .testing-subtitle {
+      margin-top: 8px;
+      font-size: 15px;
+      color: #9ca3af;
+      max-width: 540px;
+    }
+    .testing-logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .testing-logo-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 22px;
+      overflow: hidden;
+    }
+    .testing-logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .testing-logo-text {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
     }
 
-    /* 600x500 = same 5:6 ratio as 315x250, just bigger */
-    .card {
-      width: 600px;
-      height: 500px;
-      background: #020617;
-      border-radius: 24px;
-      border: 1px solid #111827;
-      box-shadow: 0 22px 50px rgba(0,0,0,0.75);
-      padding: 30px 30px 26px 30px;
+    .ad-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .ad-card {
+      border-radius: 18px;
+      background: rgba(15,23,42,0.97);
+      border: 1px solid #1f2937;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+      padding: 16px 16px 14px 16px;
       box-sizing: border-box;
-      color: #e5e7eb;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-
-    .top-row {
+    .ad-header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 16px;
+      gap: 10px;
+      margin-bottom: 6px;
     }
-
-    .text-col {
-      flex: 0 0 52%;
-    }
-
-    .logo-wrap {
-      width: 230px;          /* bigger logo */
-      height: 230px;
-      border-radius: 40px;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-
-    .logo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-    }
-
-    .title {
-      font-size: 46px;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      margin-bottom: 20px;
-    }
-
-    .mini-block {
-      margin-top: 8px;
-      font-size: 17px;
-      line-height: 1.45;
-    }
-
-    .mini-block strong {
-      display: block;
-      font-size: 19px;
-      color: #bfdbfe;
-      margin-bottom: 2px;
-    }
-
-    .bottom-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 8px;
-    }
-
-    .price {
-      font-size: 50px;
-      font-weight: 800;
-      color: #f9fafb;
-    }
-
-    .badge {
-      font-size: 14px;
-      padding: 8px 22px;
+    .ad-icon {
+      width: 30px;
+      height: 30px;
       border-radius: 999px;
-      background: rgba(56,189,248,0.18);
-      border: 1px solid rgba(56,189,248,0.8);
-      color: #bfdbfe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      background: rgba(37,99,235,0.18);
+      color: #93c5fd;
+    }
+    .ad-icon.gold { background: rgba(234,179,8,0.2); color: #facc15; }
+    .ad-icon.red  { background: rgba(248,113,113,0.2); color: #fca5a5; }
+    .ad-icon.green{ background: rgba(34,197,94,0.22); color: #6ee7b7; }
+    .ad-icon.purple{ background: rgba(147,51,234,0.22); color:#e9d5ff;}
+
+    .ad-title {
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .ad-tagline {
+      font-size: 12px;
+      color: #9ca3af;
+      margin-bottom: 8px;
+    }
+    .ad-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .ad-pill.blue {
+      background: rgba(56,189,248,0.16);
+      color: #7dd3fc;
+      border: 1px solid rgba(56,189,248,0.7);
+    }
+    .ad-pill.gold {
+      background: rgba(234,179,8,0.16);
+      color: #facc15;
+      border: 1px solid rgba(234,179,8,0.75);
+    }
+    .ad-pill.red {
+      background: rgba(248,113,113,0.16);
+      color: #fecaca;
+      border: 1px solid rgba(248,113,113,0.75);
+    }
+    .ad-pill.green {
+      background: rgba(34,197,94,0.16);
+      color: #bbf7d0;
+      border: 1px solid rgba(34,197,94,0.75);
+    }
+    .ad-pill.purple {
+      background: rgba(147,51,234,0.16);
+      color: #e9d5ff;
+      border: 1px solid rgba(147,51,234,0.75);
+    }
+
+    .ad-points {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 8px 0;
+      font-size: 11px;
+      color: #d1d5db;
+    }
+    .ad-points li {
+      margin-bottom: 3px;
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+    }
+    .ad-points li i {
+      font-size: 9px;
+      margin-top: 3px;
+      color: #6b7280;
+    }
+    .ad-footer {
+      margin-top: 4px;
+      font-size: 10px;
+      color: #6b7280;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .ad-footer span.key {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
     }
   </style>
 </head>
 <body>
 
-<div class="card">
-  <div class="top-row">
-    <div class="text-col">
-      <div class="title">CCTFF</div>
-
-      <div class="mini-block">
-        <strong>Built for Production</strong>
-        Handles live games with tag syncing and DataStore persistence.
-      </div>
-
-      <div class="mini-block">
-        <strong>One Config, All Chat</strong>
-        Update tags, colors, and system messages from a single file.
-      </div>
+<div class="testing-wrapper">
+  <div class="testing-header">
+    <div>
+      <div class="testing-title">CCTFF</div>
+      <p class="testing-subtitle">
+        Quick visuals for testing and screenshots. Each card focuses on a small part of the chat framework so you can grab different angles for posts.
+      </p>
     </div>
-
-    <div class="logo-wrap">
-      <img src="Assets/CCTFF_Logo.png" alt="CCTFF Logo">
+    <div class="testing-logo">
+      <div class="testing-logo-icon">
+        <img src="Assets/CCTFF_Logo.png" alt="CCTFF Logo">
+      </div>
+      <div class="testing-logo-text">VAULT • CCTFF</div>
     </div>
   </div>
 
-  <div class="mini-block">
-    <strong>Documented API</strong>
-    Example scripts and clear install steps included.
-  </div>
+  <div class="ad-grid">
+    <!-- AD: Role Tags Overview -->
+    <div class="ad-card">
+      <div>
+        <div class="ad-header">
+          <div class="ad-icon"><i class="fas fa-id-badge"></i></div>
+          <div class="ad-title">Role Tags Overview</div>
+        </div>
+        <div class="ad-pill blue">
+          <i class="fas fa-sliders-h"></i> CONFIG DRIVEN
+        </div>
+        <p class="ad-tagline">
+          Developer, owner, tester, VIP – all defined in one config table and synced to chat + bubbles.
+        </p>
+        <ul class="ad-points">
+          <li><i class="fas fa-circle"></i><span>Per-role colors and typography.</span></li>
+          <li><i class="fas fa-circle"></i><span>Default tag support built in.</span></li>
+          <li><i class="fas fa-circle"></i><span>Works with legacy Roblox chat.</span></li>
+        </ul>
+      </div>
+      <div class="ad-footer">
+        <span class="key">Role Tags</span>
+        <span>See more on the page</span>
+      </div>
+    </div>
 
-  <div class="bottom-row">
-    <div class="price">$4.99</div>
-    <div class="badge">Lifetime updates</div>
+    <!-- AD: Tag Slots -->
+    <div class="ad-card">
+      <div>
+        <div class="ad-header">
+          <div class="ad-icon purple"><i class="fas fa-layer-group"></i></div>
+          <div class="ad-title">Tag Slots Control</div>
+        </div>
+        <div class="ad-pill purple">
+          <i class="fas fa-equals"></i> LIMITS
+        </div>
+        <p class="ad-tagline">
+          Let players stack multiple tags but keep things readable with a hard slot limit.
+        </p>
+        <ul class="ad-points">
+          <li><i class="fas fa-circle"></i><span>Max slots set in config.</span></li>
+          <li><i class="fas fa-circle"></i><span>Default tag auto‑unequips when needed.</span></li>
+          <li><i class="fas fa-circle"></i><span>UI stays clean in busy servers.</span></li>
+        </ul>
+      </div>
+      <div class="ad-footer">
+        <span class="key">Slots</span>
+        <span>Details live in docs</span>
+      </div>
+    </div>
+
+    <!-- AD: Temporary Event Tags -->
+    <div class="ad-card">
+      <div>
+        <div class="ad-header">
+          <div class="ad-icon.green"><i class="fas fa-hourglass-half"></i></div>
+          <div class="ad-title">Temporary Event Tags</div>
+        </div>
+        <div class="ad-pill green">
+          <i class="fas fa-clock"></i> AUTO EXPIRE
+        </div>
+        <p class="ad-tagline">
+          Give a tag for a weekend event, let it expire later without manual cleanup.
+        </p>
+        <ul class="ad-points">
+          <li><i class="fas fa-circle"></i><span>Per‑tag duration setting.</span></li>
+          <li><i class="fas fa-circle"></i><span>Removes from owned and equipped lists.</span></li>
+          <li><i class="fas fa-circle"></i><span>Great for limited‑time rewards.</span></li>
+        </ul>
+      </div>
+      <div class="ad-footer">
+        <span class="key">Events</span>
+        <span>Example config on page</span>
+      </div>
+    </div>
+
+    <!-- AD: Leaderboard Ranks -->
+    <div class="ad-card">
+      <div>
+        <div class="ad-header">
+          <div class="ad-icon gold"><i class="fas fa-trophy"></i></div>
+          <div class="ad-title">Leaderboard Ranks</div>
+        </div>
+        <div class="ad-pill gold">
+          <i class="fas fa-arrow-up"></i> LIVE RANKS
+        </div>
+        <p class="ad-tagline">
+          Tags like [💰 Coins #1] follow your stats so top players stand out instantly.
+        </p>
+        <ul class="ad-points">
+          <li><i class="fas fa-circle"></i><span><code>%s</code> placeholder injects the rank.</span></li>
+          <li><i class="fas fa-circle"></i><span>Update text without re‑giving tags.</span></li>
+          <li><i class="fas fa-circle"></i><span>Works for wins, waves, points, more.</span></li>
+        </ul>
+      </div>
+      <div class="ad-footer">
+        <span class="key">Leaderboard</span>
+        <span>More ranks in docs</span>
+      </div>
+    </div>
+
+    <!-- AD: System Alerts -->
+    <div class="ad-card">
+      <div>
+        <div class="ad-header">
+          <div class="ad-icon red"><i class="fas fa-bell"></i></div>
+          <div class="ad-title">System Alerts</div>
+        </div>
+        <div class="ad-pill red">
+          <i class="fas fa-bullhorn"></i> CLEAR SIGNALS
+        </div>
+        <p class="ad-tagline">
+          Color‑coded [SYSTEM], [ALERT], [SUCCESS], [ERROR] lines woven into normal chat.
+        </p>
+        <ul class="ad-points">
+          <li><i class="fas fa-circle"></i><span>RichText support for key words.</span></li>
+          <li><i class="fas fa-circle"></i><span>Server‑side API for broadcasts.</span></li>
+          <li><i class="fas fa-circle"></i><span>Fits dark themes out of the box.</span></li>
+        </ul>
+      </div>
+      <div class="ad-footer">
+        <span class="key">System</span>
+        <span>More styles on page</span>
+      </div>
+    </div>
+
+    <!-- AD: Per-Player Preferences -->
+    <div class="ad-card">
+      <div>
+        <div class="ad-header">
+          <div class="ad-icon.green"><i class="fas fa-toggle-on"></i></div>
+          <div class="ad-title">Player Message Settings</div>
+        </div>
+        <div class="ad-pill green">
+          <i class="fas fa-user-cog"></i> PER PLAYER
+        </div>
+        <p class="ad-tagline">
+          Let players mute some system messages while still seeing the important stuff.
+        </p>
+        <ul class="ad-points">
+          <li><i class="fas fa-circle"></i><span>Preferences stored in DataStore.</span></li>
+          <li><i class="fas fa-circle"></i><span>Toggle by message name.</span></li>
+          <li><i class="fas fa-circle"></i><span>Helps keep busy chats readable.</span></li>
+        </ul>
+      </div>
+      <div class="ad-footer">
+        <span class="key">Prefs</span>
+        <span>Settings idea in docs</span>
+      </div>
+    </div>
+
+    <!-- AD: Dev Test UI -->
+    <div class="ad-card">
+      <div>
+        <div class="ad-header">
+          <div class="ad-icon purple"><i class="fas fa-vial"></i></div>
+          <div class="ad-title">Dev Test UI</div>
+        </div>
+        <div class="ad-pill purple">
+          <i class="fas fa-play-circle"></i> ONE BUTTON
+        </div>
+        <p class="ad-tagline">
+          A small in‑game panel that runs all tag, leaderboard, and system APIs in sequence.
+        </p>
+        <ul class="ad-points">
+          <li><i class="fas fa-circle"></i><span>Carousel tests with built‑in delay.</span></li>
+          <li><i class="fas fa-circle"></i><span>Logs success / failure to output.</span></li>
+          <li><i class="fas fa-circle"></i><span>Great for first‑time setup checks.</span></li>
+        </ul>
+      </div>
+      <div class="ad-footer">
+        <span class="key">Testing</span>
+        <span>Panel layout on page</span>
+      </div>
+    </div>
+
+    <!-- AD: Permissions via Tags -->
+    <div class="ad-card">
+      <div>
+        <div class="ad-header">
+          <div class="ad-icon"><i class="fas fa-lock"></i></div>
+          <div class="ad-title">Tag‑Based Permissions</div>
+        </div>
+        <div class="ad-pill blue">
+          <i class="fas fa-key"></i> ACCESS
+        </div>
+        <p class="ad-tagline">
+          Use tags as keys for VIP doors, menus, boosts, and admin tools with a single HasTag check.
+        </p>
+        <ul class="ad-points">
+          <li><i class="fas fa-circle"></i><span>Clean gating logic in one place.</span></li>
+          <li><i class="fas fa-circle"></i><span>Supports multiple “admin” tags.</span></li>
+          <li><i class="fas fa-circle"></i><span>Easy to extend later.</span></li>
+        </ul>
+      </div>
+      <div class="ad-footer">
+        <span class="key">Access</span>
+        <span>Pattern shown in docs</span>
+      </div>
+    </div>
+
+    <!-- AD: Achievement Tags -->
+    <div class="ad-card">
+      <div>
+        <div class="ad-header">
+          <div class="ad-icon.gold"><i class="fas fa-star"></i></div>
+          <div class="ad-title">Achievement Tags</div>
+        </div>
+        <div class="ad-pill gold">
+          <i class="fas fa-flag-checkered"></i> MILESTONES
+        </div>
+        <p class="ad-tagline">
+          Stackable tags for achievements and long‑term goals so players “wear” their progress.
+        </p>
+        <ul class="ad-points">
+          <li><i class="fas fa-circle"></i><span>Progress checks across tag sets.</span></li>
+          <li><i class="fas fa-circle"></i><span>Supports rare / limited tags.</span></li>
+          <li><i class="fas fa-circle"></i><span>Pairs well with custom leaderboards.</span></li>
+        </ul>
+      </div>
+      <div class="ad-footer">
+        <span class="key">Achieve</span>
+        <span>More ideas on page</span>
+      </div>
+    </div>
   </div>
 </div>
 
