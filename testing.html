@@ -27,12 +27,14 @@
       border: 1px solid #111827;
       box-shadow: 0 34px 90px rgba(0,0,0,0.78);
       box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
     }
     .testing-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 30px;
     }
     .testing-title {
       font-size: 36px;
@@ -72,7 +74,6 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
-      margin-bottom: 28px;
     }
     .ad-card {
       border-radius: 18px;
@@ -107,15 +108,9 @@
     .ad-icon.green{ background: rgba(34,197,94,0.22); color: #6ee7b7; }
     .ad-icon.purple{ background: rgba(147,51,234,0.22); color:#e9d5ff;}
 
-    .ad-title {
-      font-size: 15px;
-      font-weight: 700;
-    }
-    .ad-tagline {
-      font-size: 12px;
-      color: #9ca3af;
-      margin-bottom: 8px;
-    }
+    .ad-title { font-size: 15px; font-weight: 700; }
+    .ad-tagline { font-size: 12px; color: #9ca3af; margin-bottom: 8px; }
+
     .ad-pill {
       display: inline-flex;
       align-items: center;
@@ -127,31 +122,11 @@
       text-transform: uppercase;
       margin-bottom: 6px;
     }
-    .ad-pill.blue {
-      background: rgba(56,189,248,0.16);
-      color: #7dd3fc;
-      border: 1px solid rgba(56,189,248,0.7);
-    }
-    .ad-pill.gold {
-      background: rgba(234,179,8,0.16);
-      color: #facc15;
-      border: 1px solid rgba(234,179,8,0.75);
-    }
-    .ad-pill.red {
-      background: rgba(248,113,113,0.16);
-      color: #fecaca;
-      border: 1px solid rgba(248,113,113,0.75);
-    }
-    .ad-pill.green {
-      background: rgba(34,197,94,0.16);
-      color: #bbf7d0;
-      border: 1px solid rgba(34,197,94,0.75);
-    }
-    .ad-pill.purple {
-      background: rgba(147,51,234,0.16);
-      color: #e9d5ff;
-      border: 1px solid rgba(147,51,234,0.75);
-    }
+    .ad-pill.blue   { background: rgba(56,189,248,0.16);  color: #7dd3fc; border: 1px solid rgba(56,189,248,0.7); }
+    .ad-pill.gold   { background: rgba(234,179,8,0.16);   color: #facc15; border: 1px solid rgba(234,179,8,0.75); }
+    .ad-pill.red    { background: rgba(248,113,113,0.16); color: #fecaca; border: 1px solid rgba(248,113,113,0.75); }
+    .ad-pill.green  { background: rgba(34,197,94,0.16);   color: #bbf7d0; border: 1px solid rgba(34,197,94,0.75); }
+    .ad-pill.purple { background: rgba(147,51,234,0.16);  color: #e9d5ff; border: 1px solid rgba(147,51,234,0.75); }
 
     .ad-preview {
       margin-bottom: 8px;
@@ -200,40 +175,55 @@
       letter-spacing: 0.16em;
     }
 
-    /* Extra big single card for copy text */
-    .long-card {
-      margin-top: 10px;
+    /* Copy panel with all post texts */
+    .copy-card {
       border-radius: 18px;
       background: rgba(15,23,42,0.97);
       border: 1px solid #1f2937;
-      box-shadow: 0 20px 46px rgba(0,0,0,0.68);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.7);
       padding: 18px 20px;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
-    .long-card-header {
+    .copy-header {
       display: flex;
       align-items: center;
       gap: 10px;
+      margin-bottom: 4px;
     }
-    .long-card-title {
+    .copy-title {
       font-size: 16px;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #e5e7eb;
     }
-    .long-card-sub {
+    .copy-sub {
       font-size: 12px;
       color: #9ca3af;
     }
-    .long-card-body {
-      font-size: 12px;
-      color: #d1d5db;
-      line-height: 1.6;
+    .copy-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      font-size: 11px;
+    }
+    .copy-chip {
+      border-radius: 10px;
+      background: #020617;
+      border: 1px solid #1f2937;
+      padding: 8px 10px;
+      line-height: 1.4;
       white-space: pre-line;
+    }
+    .copy-chip-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #9ca3af;
+      margin-bottom: 4px;
     }
   </style>
 </head>
@@ -255,9 +245,9 @@
     </div>
   </div>
 
-  <!-- Grid of small ad cards (unchanged layout) -->
+  <!-- image cards (unchanged layout) -->
   <div class="ad-grid">
-    <!-- AD: Role Tags Overview -->
+    <!-- Role Tags Overview -->
     <div class="ad-card">
       <div>
         <div class="ad-header">
@@ -294,7 +284,7 @@
       </div>
     </div>
 
-    <!-- AD: Tag Slots -->
+    <!-- Tag Slots Control -->
     <div class="ad-card">
       <div>
         <div class="ad-header">
@@ -327,7 +317,7 @@
       </div>
     </div>
 
-    <!-- AD: Temporary Event Tags -->
+    <!-- Temporary Event Tags -->
     <div class="ad-card">
       <div>
         <div class="ad-header">
@@ -362,7 +352,7 @@
       </div>
     </div>
 
-    <!-- AD: Leaderboard Ranks -->
+    <!-- Leaderboard Ranks -->
     <div class="ad-card">
       <div>
         <div class="ad-header">
@@ -398,7 +388,7 @@
       </div>
     </div>
 
-    <!-- AD: System Alerts -->
+    <!-- System Alerts -->
     <div class="ad-card">
       <div>
         <div class="ad-header">
@@ -433,7 +423,7 @@
       </div>
     </div>
 
-    <!-- AD: Per-Player Preferences -->
+    <!-- Player Message Settings -->
     <div class="ad-card">
       <div>
         <div class="ad-header">
@@ -466,7 +456,7 @@
       </div>
     </div>
 
-    <!-- AD: Dev Test UI -->
+    <!-- Dev Test UI -->
     <div class="ad-card">
       <div>
         <div class="ad-header">
@@ -499,7 +489,7 @@
       </div>
     </div>
 
-    <!-- AD: Permissions via Tags -->
+    <!-- Tag‑Based Permissions -->
     <div class="ad-card">
       <div>
         <div class="ad-header">
@@ -534,7 +524,7 @@
       </div>
     </div>
 
-    <!-- AD: Achievement Tags -->
+    <!-- Achievement Tags -->
     <div class="ad-card">
       <div>
         <div class="ad-header">
@@ -569,18 +559,83 @@
     </div>
   </div>
 
-  <!-- Single large card for post text / copy -->
-  <div class="long-card">
-    <div class="long-card-header">
-      <div class="ad-icon purple"><i class="fas fa-pen-nib"></i></div>
+  <!-- separate copy card with all ad texts -->
+  <div class="copy-card">
+    <div class="copy-header">
+      <div class="ad-icon purple"><i class="fas fa-feather-alt"></i></div>
       <div>
-        <div class="long-card-title">Post Text Preview</div>
-        <div class="long-card-sub">Drop in your Twitter copy here so it exports with the visuals.</div>
+        <div class="copy-title">Post Text (for all cards)</div>
+        <div class="copy-sub">Use these captions with the screenshots. Short, low‑key, each one matches a card above.</div>
       </div>
     </div>
-    <div class="long-card-body">
-      Example:
-      Been experimenting with config‑driven chat tags in Roblox – role tags, leaderboard ranks and system lines all sharing one config. Screens and notes are up on the page if you want a closer look. #RobloxDev #Lua
+
+    <div class="copy-row">
+      <div class="copy-chip">
+        <div class="copy-chip-title">Role Tags Overview</div>
+Been experimenting with config‑driven player tags for Roblox chat. One table for roles, colors, and styles – the whole UI updates from that. #RobloxDev #Lua
+
+More examples are on the page if you’re curious.
+      </div>
+
+      <div class="copy-chip">
+        <div class="copy-chip-title">Tag Slots Control</div>
+Playing with limited tag slots so players can flex a few roles without turning chat into a sticker wall. All driven by a MaxEquippedTags setting. #RobloxDev #GameDev
+
+Dropped a small visual of the idea on my page.
+      </div>
+
+      <div class="copy-chip">
+        <div class="copy-chip-title">Temporary Event Tags</div>
+Tried temporary tags for events: give a tag for the weekend, let it expire on its own later. No cleanup scripts, no spreadsheets. #RobloxDev #Systems
+
+There’s a quick mockup of it sitting on my page.
+      </div>
+    </div>
+
+    <div class="copy-row">
+      <div class="copy-chip">
+        <div class="copy-chip-title">Leaderboard Ranks</div>
+Leaderboard tags like “Coins #1 / #2 / #3” hooked straight to stats feel way better than plain names. One config entry and a %s in the text. #RobloxDev #Leaderboard
+
+Got a screenshot of that setup on the page.
+      </div>
+
+      <div class="copy-chip">
+        <div class="copy-chip-title">System Alerts</div>
+System messages hit harder when they aren’t just grey text. [SYSTEM], [ALERT], [SUCCESS], [ERROR] each with their own color and vibe. #RobloxDev #UI
+
+I’ve got a small panel of examples on my page.
+      </div>
+
+      <div class="copy-chip">
+        <div class="copy-chip-title">Player Message Settings</div>
+Letting players toggle certain system messages (events, promos, etc.) keeps chat from feeling noisy while the important stuff still shows. #RobloxDev #UX
+
+Shared a quick view of that settings idea on my page.
+      </div>
+    </div>
+
+    <div class="copy-row">
+      <div class="copy-chip">
+        <div class="copy-chip-title">Dev Test UI</div>
+Made a tiny “API carousel” UI that runs through all the tag / leaderboard / system calls in sequence. Super handy for catching weird edge cases. #RobloxDev #Testing
+
+If you’re into that kind of tooling, it’s on my page.
+      </div>
+
+      <div class="copy-chip">
+        <div class="copy-chip-title">Tag‑Based Permissions</div>
+Using tags as keys has been nice: VIP doors, special menus, boosts, admin tools – all checked with a single HasTag call. #RobloxDev #Scripting
+
+There’s a simple permissions card on my page showing the flow.
+      </div>
+
+      <div class="copy-chip">
+        <div class="copy-chip-title">Achievement Tags</div>
+Achievement tags are fun: stackable little titles that show how far someone has pushed a system, not just their latest stat. #RobloxDev #GameDesign
+
+Got a few examples mocked up on my page if you want ideas.
+      </div>
     </div>
   </div>
 </div>
